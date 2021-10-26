@@ -25,6 +25,6 @@ def prime(j):
     result = prime_numbers[-1]
     print(f"{j}th prime number is: {result}")
 
-prime(6) #to test the function, this should be 13
+prime(6) #to test the function, 6th prime should be 13
 prime(10001) #answer to the question
 prime(int(input("Ask me another prime number: "))) #calculate with user input
