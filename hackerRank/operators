@@ -1,3 +1,4 @@
+# https://www.hackerrank.com/challenges/30-operators/problem
 #!/bin/python3
 
 import math
