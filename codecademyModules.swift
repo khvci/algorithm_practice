@@ -146,3 +146,58 @@ for x in list {
 
 print("Sum of even numbers is \(sum)")
 print("Product of odd numbers is \(prod)")
+
+// checking for elements in sets
+
+var coffeeFlavors: Set = ["Caramel", "Mocha", "Pumpkin Spice", "Vanilla", "Blueberry"]
+
+if coffeeFlavors.contains("Blueberry") {
+  print("One blueberry coffee coming right up.")
+} else {
+  print("We do not serve that coffee flavor here.")
+}
+
+// iterating through a set
+
+var thingsToPack: Set = ["Bathing Suit", "Clothes", "Sunglasses", "Sunscreen", "Favorite Book", "Phone Charger"]
+
+var suitcase = Set<String>()
+
+for item in thingsToPack {
+  suitcase.insert(item)
+}
+print(suitcase)
+
+// set operations: .intersection()
+
+var swim: Set = ["Turtles", "Ducks", "Puffins", "Shark"]
+
+var fly: Set = ["Humming birds", "Bats", "Ducks", "Puffins"]
+
+var swimAndFly = swim.intersection(fly)
+print(swimAndFly)
+
+// set operations: .union()
+
+var consonants: Set = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]
+
+var vowels: Set = ["A", "E", "I", "O", "U"]
+
+var alphabet = consonants.union(vowels)
+print(alphabet)
+
+// set operations: .symmetricDifference()
+
+var oscarWinners: Set = ["Heath Ledger", "Rita Moreno", "Audrey Hepburn", "John Legend"]
+var emmyWinners: Set = ["Peter Dinklage", "John Legend", "Audrey Hepburn", "Rita Moreno"]
+
+var difference = oscarWinners.symmetricDifference(emmyWinners)
+print(difference)
+
+// set operations: .subtracting()
+
+var foodEmojis: Set = ["🥕", "🍇", "🌶️", "🍒", "🍎", "🥦"]
+var fruitEmojis: Set = ["🍇", "🍎", "🍒"]
+
+var veggieEmojis = foodEmojis.subtracting(fruitEmojis)
+print(veggieEmojis)
