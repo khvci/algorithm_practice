@@ -4,7 +4,7 @@ var episode = 3
 
 var villain: String 
 
-// 🦹
+// switch cases
 
 switch episode {
   case 1...3:
@@ -18,7 +18,7 @@ switch episode {
 }
 print(villain)
 
-// Switch Statement: where Clause
+// switch statement: where clause
 
 var wholeNumber = Int.random(in: 1...10000000)
 
@@ -89,3 +89,22 @@ let bool3 = !(false && true) && (false || false)
 print(bool1) // should be true
 print(bool2) // should be true
 print(bool3) // should be false
+
+// prime number checker with for and while loops
+
+var n: Int = -15454
+if n < 2 {
+  print("you can't test under 2, it's the smallest prime'")
+  n += (2 - n)
+}
+while n <= 100 {
+  var isPrime = true
+  for i in stride(from:2, to: n - 1, by: 1) {
+    if n % i == 0 {
+      isPrime = false
+    }
+  }
+  isPrime ? print("\(n) is prime.") : print("\(n) is not prime.")
+  n += 1
+}
+
