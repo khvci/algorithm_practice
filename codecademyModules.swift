@@ -108,3 +108,41 @@ while n <= 100 {
   n += 1
 }
 
+// .append() method
+
+var resolutions = ["play more music 🎸",
+                   "read more books 📚",
+                   "drink more water 💧"]
+
+print(resolutions)
+resolutions.append("something")
+print(resolutions)
+resolutions += ["other thing", "and another one"]
+print(resolutions)
+
+// .insert() and .remove() Methods
+
+var dna = ["ATG", "ACG", "GAA", "TAT"]
+
+dna.insert("GTG", at: 3)
+dna.remove(at: 0)
+print(dna)
+
+// write a swift program to find the sum of even numbers and the product of odd numbers in an array.
+
+var list = [2, 4, 3, 6, 1, 9]
+
+
+var sum = 0
+var prod = 1
+
+for x in list {
+  if x % 2 == 0 {
+    sum += x
+  } else {
+    prod *= x
+  }
+}
+
+print("Sum of even numbers is \(sum)")
+print("Product of odd numbers is \(prod)")
