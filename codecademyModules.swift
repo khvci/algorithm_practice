@@ -339,4 +339,47 @@ for monthlyProfit in lemonadeStand.values {
 }
 print("Total profits are \(total)")
 
-// 
+// Defining a Function w/Void -> does not return any value.
+
+func directionsToTimesSq() -> Void {
+  print("Walk 4 mins to 34th St Herald Square train station.")
+  print("Take the Northbound N, Q, R, or W train 1 stop.")
+  print("Get off the Times Square 42nd Street stop.")
+  print("Take lots of pictures! 📸")
+}
+
+// Multiple Parameters 
+
+func timeToDestination(distance: Int, speed: Int) -> Int {
+  let time = distance / speed
+  return time
+}
+print(timeToDestination(distance: 6836, speed: 560))
+
+// Argument Labels
+
+var friendsList = [String]()
+
+func addFriend(named friendName: String) {
+  friendsList.append(friendName)
+}
+
+addFriend(named: "Alice")
+addFriend(named: "Bob")
+addFriend(named: "Cindy")
+
+print(friendsList)
+
+// Omitting Argument Labels
+
+let adults = 2
+let students = 15 
+
+func museumEntry(_ numAdults: Int, _ numStudents: Int) -> Int {
+  let studentTicket = 14
+  let adultTicket = 25
+  let total = (studentTicket * numStudents) + (adultTicket * numAdults)
+  return total
+}
+
+print(museumEntry(adults, students))
