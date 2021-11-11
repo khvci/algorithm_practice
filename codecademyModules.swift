@@ -244,8 +244,6 @@ var abbreviations = [
   "GJOYC": "Great Job On Your Code"
 ]
 
-// Add your code below 🆘
-
 abbreviations["LOL"] = "Laugh Out Loud"
 
 abbreviations.updateValue("Be Right Back", forKey: "BRB")
@@ -263,8 +261,6 @@ ar rainbowHex = [
   "blue": "#0000ff",
   "violet": "#ee82ee"
 ]
-
-// Write your code below 🌈
 
 rainbowHex["maroon"] = nil
 
@@ -314,8 +310,7 @@ var mythology = [
   "Athena": "Minerva", 
   "Poseidon": "Neptune",
   "Demeter": "Ceres"]
-
-// Write your code below 🏛️ 
+ 
 for  (greekName, romanName) in mythology {
   print("\(greekName) is also known as \(romanName)")
 }
@@ -383,3 +378,49 @@ func museumEntry(_ numAdults: Int, _ numStudents: Int) -> Int {
 }
 
 print(museumEntry(adults, students))
+
+// Returning Multiple Values
+
+func favoriteCuisine() -> (name: String, dish: String) {
+  return ("Italian", "pizza")
+}
+
+let cuisine = favoriteCuisine()
+
+print("My favorite \(cuisine.name) dish is \(cuisine.dish)")
+
+// Default Parameters 
+
+func bookingTicket(passengerName: String = "Adam", seatClass: String = "Economy", timeOfDeparture: Int) -> String {
+  return "\(passengerName), your seat class is \(seatClass), and you will be departing at \(timeOfDeparture)"
+}
+
+print(bookingTicket(timeOfDeparture: 9))
+
+print(bookingTicket(seatClass: "Business", timeOfDeparture: 9))
+
+// Variadic Parameters
+
+func avgSongLength(times: Int...) -> Int {
+  var total = 0
+  for time in times {
+    total += time
+  }
+  return total / times.count
+}
+
+print(avgSongLength(times: 183, 176, 180, 176, 184, 179, 181, 180, 172, 178))
+
+// In-Out Parameters
+
+var currentGeneratorState = "Off"
+
+func generators(powerOutage: Bool, state: inout String) {
+  if powerOutage == true {
+    state = "On"
+  }
+}
+
+generators(powerOutage: true, state: &currentGeneratorState)
+
+print(currentGeneratorState)
