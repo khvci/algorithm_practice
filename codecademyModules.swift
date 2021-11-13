@@ -424,3 +424,137 @@ func generators(powerOutage: Bool, state: inout String) {
 generators(powerOutage: true, state: &currentGeneratorState)
 
 print(currentGeneratorState)
+
+// -- structures --
+
+// The Init Method
+
+struct Book 
+  {
+    var title: String
+    var pages: Int
+
+    init (title: String, pages: Int) 
+      {
+      self.title = title
+      self.pages = pages
+      }
+  }
+
+  var theHobbit = Book(title: "The Hobbit", pages: 300)
+
+// Structure Methods
+
+struct Band {
+  var genre: String
+  var members: Int
+  var isActive: Bool
+  
+  init(genre: String, members: Int, isActive: Bool) {
+    self.genre = genre
+    self.members = members
+    self.isActive = isActive
+  }
+
+  func pumpUpCrowd() -> String
+    {
+      if self.isActive
+        {
+          return "Are you ready to ROCK?"
+        } else {
+          return "..."
+        }
+    }
+  
+}
+
+var fooFighters = Band(genre: "rock", members: 6, isActive: true)
+print(fooFighters.pumpUpCrowd())
+
+// Mutating Methods
+
+struct Band {
+  var genre: String
+  var members: Int
+  var isActive: Bool
+  
+  init(genre: String, members: Int, isActive: Bool) {
+    self.genre = genre
+    self.members = members
+    self.isActive = isActive
+  }
+  
+  func pumpUpCrowd() -> String {
+    if self.isActive {
+      return "Are you ready to ROCK?"
+    } else {
+      return "..."
+    }
+  }
+  
+  mutating func changeGenre(newGenre: String) -> String
+    {
+      self.genre = newGenre
+      return self.genre
+    }
+  
+  
+}
+
+var journey = Band(genre: "jazz", members: 5, isActive: true)
+
+var bandsNewGenre = journey.changeGenre(newGenre: "rock")
+print(bandsNewGenre)
+
+// New Type
+
+struct Band {
+  var genre: String
+  var members: Int
+  var isActive: Bool
+  
+  init(genre: String, members: Int, isActive: Bool) {
+    self.genre = genre
+    self.members = members
+    self.isActive = isActive
+  }
+  
+  func pumpUpCrowd() -> String {
+    if self.isActive {
+      return "Are you ready to ROCK?"
+    } else {
+      return "..."
+    }
+  }
+  
+  mutating func changeGenre(newGenre: String) -> String {
+    self.genre = newGenre
+    return self.genre
+  } 
+  
+}
+
+var journey = Band(genre: "rock", members: 5, isActive: true)
+
+print(type(of: journey))
+
+var bts: Band = Band(genre: "kpop", members: 7, isActive: true)
+
+// Structures are Value Types
+
+struct Finch {
+  var lengthInCm: Double
+  var nestLocation: String
+
+  init(lengthInCm: Double, nestLocation: String) {
+    self.lengthInCm = lengthInCm
+    self.nestLocation = nestLocation
+  }
+}
+
+var groundFinch = Finch(lengthInCm: 15.0, nestLocation: "Bush")
+
+var cactusFinch = groundFinch
+cactusFinch.nestLocation = "Cactus"
+print(cactusFinch.nestLocation)
+print(groundFinch.nestLocation)
