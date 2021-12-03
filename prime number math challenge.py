@@ -7,17 +7,17 @@ string false. The range will be between 1 and 2^16.
 """
 
 def MathChallenge(num):
-  
+
   if num < 2:
     return "false"
-  
+		
   for i in range(2,num):
     if num % i == 0:
       return "false"
     
   return "true"
 
-print MathChallenge(raw_input())
+print(MathChallenge(int(input())))
 
 """
 Result
