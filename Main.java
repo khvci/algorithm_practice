@@ -37,10 +37,14 @@ int num4 = 19, num5 = 20;
 System.out.println(num + num2 + num3 + num4 + num5); // prints sum of 15 + 17 + 18 + 19 + 20
 
 double num6 = 5.77d;
-int num7 = (int) num6; // Type casting - converts the double type (num6) to an int type.
+int num7 = (int) num6; // Type casting (Narrowing casting must be done manually by placing the type in parentheses in front of the value)
         
+int num8 = 9; 
+float num9 = num8; // Type casting (Widening casting is automatic, you don't need parantheses)
 float percentage = 5.66f;
 
 boolean isTrue = true;
 
 char character = 'D'; 
+
+// basic arithmetic operators are same with swift. difference: --x for decrementing, ++x for incrementing.
