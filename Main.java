@@ -31,7 +31,7 @@ public class Main {
         final int num3 = 18; //can't reassign new value later.
 
         int num4 = 19, num5 = 20;
-
+        System.out.println(num4 < num5); // prints true
         System.out.println(num + num2 + num3 + num4 + num5); // prints sum of 15 + 17 + 18 + 19 + 20
 
         double num6 = 5.77d;
@@ -56,6 +56,79 @@ public class Main {
 
 
         // Java string methods are here: https://www.w3schools.com/java/java_ref_string.asp
+
+        // - If / Else -
+
+        int num10 = 10;
+
+        if (num10 < 5) {
+            System.out.println("smaller than 5");
+        } else if (num10 == 5) {
+            System.out.println("equal to 5");
+        } else {
+            System.out.println("bigger than 5");
+        }
+
+        String ternaryVersion = (num10 < 20) ? "Smaller than 20" : "Not smaller than 20";
+        System.out.println(ternaryVersion);
+
+        // - Switch Cases -
+
+        int digit = 5;
+
+        switch(digit) {
+            case 1,3,5,7,9:
+                System.out.println("Odd");
+                break;
+            case 2,4,6,8:
+                System.out.println("Even");
+                break;
+            default:
+                System.out.println("Out of range");
+        }
+
+        // - While Loop -
+
+        int counter = 0;
+        while (counter < 3) {
+            System.out.println("Yes");
+            counter++;
+        }
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print(i + "\n"); // prints 0123456789 and then returns new line.
+        }
+
+        String[] cars = {"Volvo", "Mercedes", "Audi"}; // this is an array.
+
+        for (String i: cars) { // this is called "for-each" loop. Iterates over an array.
+            System.out.println(i);
+        }
+
+        for (int i = 0; i < 10; i++) {
+            if (i == 3) {
+                continue;
+            } else if (i == 6) {
+                break;
+            }
+            System.out.println(i);
+        }
+
+        // - Arrays -
+
+        int[] numArray = {10,20,30,40};
+        System.out.println(numArray[0]); // prints first index of numArray
+        numArray[1] = 25; // change an array element.
+        System.out.println("numArray has " + numArray.length + " elements.");
+
+        int [][] myNumbers = { {1,2,3,4}, {5,6,7} }; // multi-dimensional array.
+        System.out.println(myNumbers[1][1]); // prints 6
+
+        for (int i = 0; i < myNumbers.length; i++) {
+            for (int j = 0; j < myNumbers[i].length; j++) {
+                System.out.println(myNumbers[i][j]);
+            }
+        }
 
     }
 
