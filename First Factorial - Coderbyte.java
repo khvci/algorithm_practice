@@ -25,7 +25,7 @@ class Main {
   public static void main (String[] args) {  
     // keep this function call here     
     Scanner s = new Scanner(System.in);
-    System.out.print(FirstFactorial(s.nextLine())); 
+    System.out.print(FirstFactorial(s.nextInt()));
   }
 
 }
