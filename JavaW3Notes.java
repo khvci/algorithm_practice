@@ -3,7 +3,7 @@
 In Java, every application begins with a class name, and that class must match the filename (first letter should be
 uppercase). Every line of code that runs in Java must be inside a class; */
 
-public class Main {
+public class JavaW3Notes {
     // The main() method is required, and you will see it in every Java program:
     public static void main(String[] args) {
         System.out.println("Hello World");
@@ -130,6 +130,42 @@ public class Main {
             }
         }
 
+        // - Methods -
+        myMethod(); // prints this is a method.
+
+
+        String johnsAge = doubleVariableMethod("John", 25);
+        System.out.println(johnsAge); // prints John is 25
+
+        int totalInt = plusMethod(3, 5);
+        double totalDouble = plusMethod(3.2, 3.5); //method overloading. same name, different types.
+        System.out.println(totalInt);
+        System.out.println(totalDouble);
+
+
+    }
+    static void myMethod()
+    // static means that the method belongs to the Main class and not an object of the Main class.
+    {
+        System.out.println("this is a method.");
     }
 
+    // - Method Parameters and Return -
+
+    static String doubleVariableMethod(String fname, int age)
+    {
+        return fname + " is " + age;
+    }
+
+    // - method Overloading -
+
+    static int plusMethod(int a, int b)
+    {
+        return a + b;
+    }
+
+    static double plusMethod(double a, double b)
+    {
+        return a + b;
+    }
 }
