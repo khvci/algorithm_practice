@@ -142,6 +142,12 @@ public class JavaW3Notes {
         System.out.println(totalInt);
         System.out.println(totalDouble);
 
+        int recursiveSum = sum(10); // calls a + sum(a - 1) recursive method
+        System.out.println(recursiveSum); //prints 55
+
+        int recursiveSum2 = sum(5, 10);
+        System.out.println(recursiveSum2); // prints 45
+
 
     }
     static void myMethod()
@@ -157,7 +163,7 @@ public class JavaW3Notes {
         return fname + " is " + age;
     }
 
-    // - method Overloading -
+    // - Method Overloading -
 
     static int plusMethod(int a, int b)
     {
@@ -167,5 +173,27 @@ public class JavaW3Notes {
     static double plusMethod(double a, double b)
     {
         return a + b;
+    }
+
+    // - Recursion -
+
+    static int sum(int a)
+    {
+        if (a > 0) //halting condition to prevent infinite recursion
+        {
+            return a + sum(a - 1);
+        } else {
+            return 0;
+        }
+    }
+
+    static int sum(int a, int b)
+    {
+        if (b > a) //halting condition to prevent infinite recursion
+        {
+            return b + sum(a, b-1);
+        } else {
+            return b;
+        }
     }
 }
