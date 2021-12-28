@@ -4,6 +4,17 @@ In Java, every application begins with a class name, and that class must match t
 uppercase). Every line of code that runs in Java must be inside a class; */
 
 public class JavaW3Notes {
+    int attributeX; //Create a class attribute. See classes and objects down below.
+    public JavaW3Notes() // Create a class constructor for the Main class
+    {
+        attributeX = 5; // Set the initial value for the class attribute x
+        //Note that the constructor name must match the class name, and it cannot have a return type (like void).
+        //Also note that the constructor is called when the object is created.
+        //All classes have constructors by default: if you do not create a class constructor yourself, Java creates
+        // one for you. However, then you are not able to set initial values for object attributes.
+    }
+
+    // Everything in Java is associated with classes and objects, along with its attributes and methods.
     // The main() method is required, and you will see it in every Java program:
     public static void main(String[] args) {
         System.out.println("Hello World");
@@ -13,7 +24,8 @@ public class JavaW3Notes {
         the command prompt will take you to the next line. Now, type "java Main" to run the file. */
 
         /* - VARIABLES -
-        byte, short, int, long, float, double, boolean and char are called primitive data types. */
+        byte, short, int, long, float, double, boolean and char are called primitive data types.
+        variables are attributes(a.k.a. fields) within the class.*/
 
         String name = "John";
         // All Java variables must be identified with unique names. These unique names are called identifiers.
@@ -21,6 +33,8 @@ public class JavaW3Notes {
         String fullName = name + " " + lastName; // John Doe
         String fullName2 = name.concat(lastName); // JohnDoe
         System.out.println("Hello " + fullName);
+
+        final boolean cantChange = true; // can't reassign another value later
 
         int num = 15;
 
@@ -131,8 +145,6 @@ public class JavaW3Notes {
         }
 
         // - Methods -
-        myMethod(); // prints this is a method.
-
 
         String johnsAge = doubleVariableMethod("John", 25);
         System.out.println(johnsAge); // prints John is 25
@@ -148,12 +160,59 @@ public class JavaW3Notes {
         int recursiveSum2 = sum(5, 10);
         System.out.println(recursiveSum2); // prints 45
 
+        // - Classes and Objects -
+
+        JavaW3Notes myObj = new JavaW3Notes();
+        myObj.attributeX = 25; // set the value of attributeX to 25
+        System.out.println(myObj.attributeX);
+
+        myObj.attributeX = 40; // overriding existing value.
+
+
+        myMethod(); // static methods can be accessed without creating an object of the class, unlike public methods.
+
+        JavaW3Notes newObj = new JavaW3Notes();
+        newObj.myPublicMethod(); //public methods can only be accessed by objects unlike static methods.
+
+        JavaW3Notes myCar = new JavaW3Notes(); // Create a myCar object
+        myCar.fullThrottle(); // Call the fullThrottle() method
+        myCar.speed(200); // Call the speed() method
+
+        /*
+        Example explained
+
+1) We created a custom JavaW3Notes class with the class keyword.
+
+2) We created the fullThrottle() and speed() methods in the JavaW3Notes class.
+
+3) The fullThrottle() method and the speed() method will print out some text, when they are called.
+
+4) The speed() method accepts an int parameter called maxSpeed - we will use this in 8).
+
+5) In order to use the JavaW3Notes class and its methods, we need to create an object of the JavaW3Notes Class.
+
+6) Then, go to the main() method, which you know by now is a built-in Java method that runs your program.
+
+7) By using the new keyword we created an object with the name myCar.
+
+8) Then, we call the fullThrottle() and speed() methods on the myCar object.
+         */
+
 
     }
+
+    // In the example below, we created a static method, which means that it can be accessed without
+    // creating an object of the class, unlike public methods which can only be accessed by objects:
+
     static void myMethod()
     // static means that the method belongs to the Main class and not an object of the Main class.
     {
-        System.out.println("this is a method.");
+        System.out.println("Static methods can be accessed without creating an object of the class, unlike public");
+    }
+
+    public void myPublicMethod()
+    {
+        System.out.println("Public methods can only be accessed by objects.");
     }
 
     // - Method Parameters and Return -
@@ -196,4 +255,16 @@ public class JavaW3Notes {
             return b;
         }
     }
+
+    public void fullThrottle()
+    {
+        System.out.println("The car is going as fast as it can!");
+    }
+
+    public void speed(int maxSpeed)
+    {
+        System.out.println("Max speed is: " + maxSpeed);
+    }
+
+
 }
