@@ -4,6 +4,7 @@ In Java, every application begins with a class name, and that class must match t
 uppercase). Every line of code that runs in Java must be inside a class; */
 
 public class JavaW3Notes {
+    private String pName; // private = restricted access, see encapsulation below.
     int attributeX; //Create a class attribute. See classes and objects down below.
     public JavaW3Notes() // Create a class constructor for the Main class
     {
@@ -198,7 +199,12 @@ public class JavaW3Notes {
 8) Then, we call the fullThrottle() and speed() methods on the myCar object.
          */
 
+        // - Encapsulation -
 
+        JavaW3Notes encapObject = new JavaW3Notes();
+        encapObject.setName("John"); // sets private pName value
+        System.out.println(encapObject.getName());
+        
     }
 
     // In the example below, we created a static method, which means that it can be accessed without
@@ -266,5 +272,14 @@ public class JavaW3Notes {
         System.out.println("Max speed is: " + maxSpeed);
     }
 
+    public String getName() //getter (see encapsulation above)
+    {
+        return this.pName;
+    }
+
+    public void setName(String newName) //setter (see encapsulation above)
+    {
+        this.pName = newName;
+    }
 
 }
