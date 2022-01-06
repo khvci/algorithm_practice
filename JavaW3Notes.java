@@ -246,7 +246,29 @@ public class JavaW3Notes {
         }
         System.out.println(sum);
 
-        
+        // for each
+
+        int[] list = {1,2,3,4,5,6};
+
+        for (int i: list) {
+            System.out.println(i);
+        }
+
+        System.out.println("--------------");
+
+        int[][] matrix2 = new int[4][4];
+
+        for (int i = 0; i < matrix2.length; i++) {
+            for (int j = 0; j < matrix2[i].length; j++) {
+                matrix2[i][j] = i * matrix2[i].length + j + 1;
+            }
+        }
+        for (int[] row: matrix2) {
+            for (int col: row) {
+                System.out.print(col + " ");
+            }
+            System.out.println();
+        }
         
     }
 
