@@ -3,6 +3,8 @@
 In Java, every application begins with a class name, and that class must match the filename (first letter should be
 uppercase). Every line of code that runs in Java must be inside a class; */
 
+import java.util.Arrays;
+
 public class JavaW3Notes {
     private String pName; // private = restricted access, see encapsulation below.
     int attributeX; //Create a class attribute. See classes and objects down below.
@@ -204,6 +206,47 @@ public class JavaW3Notes {
         JavaW3Notes encapObject = new JavaW3Notes();
         encapObject.setName("John"); // sets private pName value
         System.out.println(encapObject.getName());
+
+        // Arrays
+
+        int[][] matrix = new int[4][4];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = i * matrix[i].length + j + 1;
+            }
+        }
+
+        System.out.println(Arrays.deepToString(matrix));
+
+        System.out.println("--------------------");
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("--------------------");
+
+        int[][] arr = new int[3][];
+        arr[0] = new int[1];
+        arr[1] = new int[2];
+        arr[2] = new int[3];
+        int sum = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = j + 1;
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                sum += arr[i][j];
+            }
+        }
+        System.out.println(sum);
+
+        
         
     }
 
