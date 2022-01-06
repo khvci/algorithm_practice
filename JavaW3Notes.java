@@ -4,6 +4,7 @@ In Java, every application begins with a class name, and that class must match t
 uppercase). Every line of code that runs in Java must be inside a class; */
 
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class JavaW3Notes {
     private String pName; // private = restricted access, see encapsulation below.
@@ -263,12 +264,25 @@ public class JavaW3Notes {
                 matrix2[i][j] = i * matrix2[i].length + j + 1;
             }
         }
+
         for (int[] row: matrix2) {
             for (int col: row) {
                 System.out.print(col + " ");
             }
             System.out.println();
         }
+
+        // ArrayList
+
+        ArrayList<String> carsArrayList = new ArrayList<String>();
+
+        carsArrayList.add("Volvo"); //add element to array list
+        carsArrayList.add("Mercedes-Benz");
+        carsArrayList.add("Tesla");
+
+        System.out.println(carsArrayList);
+
+
         
     }
 
